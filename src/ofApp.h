@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
-
+#include "ofAppNoWindow.h"
 class ofApp : public ofBaseApp{
 
 	public:

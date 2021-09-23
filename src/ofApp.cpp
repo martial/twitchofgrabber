@@ -73,7 +73,8 @@ void ofApp::urlResponse(ofHttpResponse & response) {
 
 //--------------------------------------------------------------
 void ofApp::loadVideo(string url) {
-    twitchPlayer.loadAsync("https://download.samplelib.com/mp4/sample-5s.mp4");
+    twitchPlayer.load("https://download.samplelib.com/mp4/sample-5s.mp4");
+    twitchPlayer.setUseTexture(false);
     twitchPlayer.play();
 }
 
