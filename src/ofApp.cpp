@@ -22,8 +22,13 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
     
+    
+    ofBackground(0);
+    
     if(twitchPlayer.isLoaded()) {
+        
         twitchPlayer.draw(0.0, 0.0);
+        ofLogNotice("video loaded");
         
         if(twitchPlayer.isFrameNew()) {
             
@@ -34,6 +39,9 @@ void ofApp::draw(){
             }
         }
         
+    } else {
+        ofLogNotice("video not loaded");
+
     }
 
 }
