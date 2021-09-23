@@ -28,14 +28,24 @@ void ofApp::draw(){
     if(twitchPlayer.isLoaded()) {
         
         twitchPlayer.draw(0.0, 0.0);
-        ofLogNotice("video loaded");
         
         if(twitchPlayer.isFrameNew()) {
             
+            ofImage img;
+            img.setFromPixels(twitchPlayer.getPixels());
+            
+            ofLogNotice("video w ") <<  twitchPlayer.getWidth();
+
+            if(img.save(ofToString(nFramesRecorded) + ".png")) {
+                ofLogNotice("video saved ") <<  nFramesRecorded++;;
+
+            }
+            
+            
             if(nFramesRecorded <= 1500) {
-                img.grabScreen(0, 0 , 280, 280);
-                img.save( ofToString(nFramesRecorded) + ".png");
-                nFramesRecorded++;
+               // img.grabScreen(0, 0 , 280, 280);
+                //img.save( ofToString(nFramesRecorded) + ".png");
+               
             }
         }
         
